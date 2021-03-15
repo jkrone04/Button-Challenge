@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Button Challenge</title>
+</head>
+
+<body>
+	<form>
+		<input type="text" id="box1">
+		<button onclick="switch_boxes()" type="button" id="b1" arrow="right">JUMP ></button>
+		<input type="text" id="box2">
+	</form>
+
+	<script language="javascript">
+	function switch_boxes() {
+		if(document.getElementById('b1').getAttribute('arrow') == "right") {
+			document.getElementById('b1').innerHTML = "< JUMP";
+			document.getElementById('box2').value = document.getElementById('box1').value;
+			document.getElementById('box1').value = "";
+			document.getElementById('b1').setAttribute('arrow', "left");
+		}
+		else {
+			document.getElementById('b1').innerHTML = "JUMP >";
+			document.getElementById('box1').value = document.getElementById('box2').value;
+			document.getElementById('box2').value = "";
+			document.getElementById('b1').setAttribute('arrow', "right");
+		}
+	}
+	</script>
+</body>
+</html>
